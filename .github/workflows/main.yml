@@ -35,9 +35,12 @@ jobs:
     - name: "step -- download test artifacts"
       uses: actions/upload-artifact@v2
       with:
-        name: test-artifact
+        name: test-artifact.zip
         path: app/build/reports/tests/testDebugUnitTest/
       
+    - name: "check folder"
+      run: ls -al 
+    
     - name: "step -- unzip artifacts"
       run: unzip test-artifact -d destination 
   
