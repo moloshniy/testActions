@@ -11,19 +11,15 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   job1:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: "step 1"
       - run: echo "step 1"
+  
   job2:
-    needs: job1
+    needs: [job1]
     runs-on: ubuntu-latest
     steps:
       - name: "step 2"
