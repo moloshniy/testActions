@@ -38,6 +38,9 @@ jobs:
       with:
         name: test-artifact
         path: app/build/reports/tests/testDebugUnitTest/
+      
+    - name: "step -- unzip artifacts"
+      run: unzip test-artifact -d destination 
   
   job2:
     needs: [job1]
