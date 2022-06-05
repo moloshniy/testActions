@@ -30,8 +30,8 @@ jobs:
       uses: actions/upload-artifact@v2
       if: failure()
       with:
-        name: test-artifact
-        path: test/to/artifact/test.txt
+        name: test-artifact.html
+        path: app/build/reports/tests/testDebugUnitTest/index.html
   
   job2:
     needs: [job1]
