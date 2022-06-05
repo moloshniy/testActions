@@ -16,11 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "step 1"
-    - run: echo "step 1"
+      run: echo "step 1"
   
   job2:
     runs-on: ubuntu-latest
     steps:
     - name: "step 2"
-    - run: echo "step2"
+      run: echo "step2"
       
