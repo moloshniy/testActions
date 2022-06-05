@@ -28,6 +28,7 @@ jobs:
 
     - name: "step -- download test artifacts"
       uses: actions/upload-artifact@v2
+      if: failure()
       with:
         name: test-artifact
         path: test/to/artifact/test.txt
