@@ -15,8 +15,12 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - name: "checkout repository"
+    - name: "step -- checkout repository"
       uses: actions/checkout@v1
+    - name: "step -- setup java"
+      uses: actions/setup-java@v1
+    - name: "step -- run unit tests"  
+      run: ./gradlew test
   
   job2:
     needs: [job1]
