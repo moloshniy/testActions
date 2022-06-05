@@ -15,8 +15,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - name: "step 1"
-      run: echo "step 1"
+    - name: "checkout repository"
+      uses: actions/checkout@v1
   
   job2:
     needs: [job1]
