@@ -23,5 +23,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "step 2"
-      run: -ls -al
+      run: ls -al
       
