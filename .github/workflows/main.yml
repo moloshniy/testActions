@@ -24,7 +24,7 @@ jobs:
 
     - name: "step -- checkout repository"
       uses: actions/checkout@v1
-
+    
     - name: "step -- setup java"
       uses: actions/setup-java@v1
       with: {java-version: 11}
@@ -32,17 +32,15 @@ jobs:
     - name: "step -- run unit tests"
       run: ./gradlew test
 
+      if: failure()
     - name: "step -- download test artifacts"
       uses: actions/upload-artifact@v2
       with:
         name: test-artifact.zip
         path: app/build/reports/tests/testDebugUnitTest/
-      
-    - name: "check folder"
-      run: ls -al 
     
-    - name: "step -- unzip artifacts"
-      run: unzip test-artifact -d destination 
+    - name: "step -- ktlint check"
+      run: ./gradlew ktlintCheck
   
   job2:
     needs: [job1]
